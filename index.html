@@ -1,226 +1,284 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="sw">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Chat4Cash 💰</title>
 
 <style>
-*{box-sizing:border-box}
-body{
+*{
+  box-sizing:border-box;
   margin:0;
-  font-family:Arial,sans-serif;
-  background:#020b18;
-  color:white;
+  padding:0;
 }
-.app{max-width:1100px;margin:auto;min-height:100vh}
-header{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:18px 20px;
-  border-bottom:1px solid #17304d;
-  background:#031020;
-}
-.brand{font-size:25px;font-weight:bold}
-.brand span{color:#18b7ff}
-.tag{color:#aebed0}
-.screen{min-height:100vh}
-.hidden{display:none!important}
 
-.auth{
+body{
+  font-family:Arial,sans-serif;
+  background:#03111f;
+  color:white;
   min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:25px;
-  background:radial-gradient(circle at top,#12345b,#020b18 60%);
 }
-.card{
-  width:100%;
-  max-width:430px;
-  background:#071a2e;
-  border:1px solid #17466d;
-  border-radius:25px;
-  padding:30px;
-  box-shadow:0 20px 60px #0008;
+
+.app{
+  max-width:700px;
+  margin:auto;
+  min-height:100vh;
+  background:#03111f;
 }
+
+header{
+  padding:28px 22px;
+  background:linear-gradient(135deg,#071b32,#062640);
+}
+
 .logo{
-  text-align:center;
-  font-size:34px;
-  margin-bottom:8px;
-}
-.card h2{text-align:center;font-size:30px}
-.card p{text-align:center;color:#aebed0}
-input{
-  width:100%;
-  padding:15px;
-  margin:8px 0;
-  border-radius:13px;
-  border:1px solid #315a7d;
-  background:#041221;
-  color:white;
-  outline:none;
-}
-input:focus{border-color:#13b8ff}
-button{
-  border:0;
-  cursor:pointer;
-  border-radius:13px;
-  padding:14px 20px;
-  color:white;
+  font-size:28px;
   font-weight:bold;
 }
-.mainbtn{
-  width:100%;
-  margin-top:10px;
-  background:linear-gradient(90deg,#08aaff,#683cff);
-  font-size:16px;
+
+.logo span{
+  color:#12bdf4;
 }
-.note{
-  display:block;
-  text-align:center;
-  color:#7f96aa;
-  margin-top:15px;
-  font-size:12px;
+
+.tag{
+  margin-top:8px;
+  color:#a9bfd3;
+  font-size:15px;
 }
 
 .hero{
-  padding:45px 25px 25px;
-  background:linear-gradient(135deg,#071d35,#081225);
+  padding:32px 22px;
+  background:linear-gradient(135deg,#071b32,#041629);
 }
-.hero h1{font-size:40px;margin:0 0 12px}
-.hero h1 span{color:#16c8ff}
-.hero p{color:#aebed0;font-size:17px}
+
+.hero h1{
+  font-size:40px;
+  line-height:1.15;
+}
+
+.hero h1 span{
+  color:#13bdf5;
+}
+
+.hero p{
+  margin-top:18px;
+  color:#a9bfd3;
+  font-size:18px;
+  line-height:1.4;
+}
 
 .tabs{
   display:flex;
-  gap:8px;
+  gap:12px;
+  overflow-x:auto;
   padding:18px;
-  overflow:auto;
-}
-.tabs button{
-  background:#0a2037;
-  border:1px solid #214766;
-  white-space:nowrap;
-}
-.tabs button.active{
-  background:linear-gradient(90deg,#079df0,#6638ee);
+  background:#020d18;
 }
 
-.title{padding:0 20px}
-.people{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:16px;
-  padding:20px;
-}
-.person{
-  background:#071a2e;
-  border:1px solid #173c5c;
-  border-radius:20px;
-  padding:20px;
+.tab{
+  min-width:120px;
+  padding:15px;
+  border:1px solid #17405f;
+  border-radius:18px;
+  background:#09233a;
+  color:white;
+  font-weight:bold;
   text-align:center;
 }
+
+.title{
+  padding:24px 22px 15px;
+  font-size:25px;
+}
+
+.card{
+  margin:12px 18px;
+  padding:28px 20px;
+  border:1px solid #164665;
+  border-radius:25px;
+  background:#071d31;
+  text-align:center;
+}
+
 .avatar{
-  width:75px;
-  height:75px;
+  width:100px;
+  height:100px;
   border-radius:50%;
   margin:auto;
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:35px;
-  background:linear-gradient(135deg,#079df0,#7b35ff);
+  font-size:55px;
+  background:linear-gradient(135deg,#159eea,#693cff);
 }
-.person h3{margin-bottom:5px}
-.country{color:#9eb2c7}
-.rate{color:#21d8a1;font-weight:bold;margin:12px}
-.chatbtn{
+
+.card h3{
+  margin-top:18px;
+  font-size:23px;
+}
+
+.country{
+  margin-top:10px;
+  color:#a9bfd3;
+  font-size:17px;
+}
+
+.rate{
+  margin-top:22px;
+  color:#20d6aa;
+  font-size:20px;
+  font-weight:bold;
+}
+
+button{
+  border:0;
+  cursor:pointer;
+  color:white;
+  font-weight:bold;
+}
+
+.chatbtn,
+.primary{
   width:100%;
-  background:linear-gradient(90deg,#079df0,#683cff);
+  margin-top:20px;
+  padding:16px;
+  border-radius:18px;
+  background:linear-gradient(90deg,#0ca7ed,#693cff);
+  font-size:17px;
+}
+
+.screen{
+  display:none;
+}
+
+.screen.active{
+  display:block;
+}
+
+.chatbox{
+  padding:18px;
+}
+
+.chathead{
+  padding:20px;
+  background:#082239;
+  border-radius:20px;
+  text-align:center;
+}
+
+.timer{
+  margin-top:12px;
+  font-size:32px;
+  color:#20d6aa;
+  font-weight:bold;
+}
+
+.messages{
+  min-height:300px;
+  margin-top:15px;
+  padding:15px;
+  border-radius:20px;
+  background:#061a2c;
+}
+
+.msg{
+  display:block;
+  width:max-content;
+  max-width:85%;
+  margin:10px 0;
+  padding:12px 15px;
+  border-radius:15px;
+  background:#123452;
+}
+
+.me{
+  margin-left:auto;
+  background:#5037d9;
+}
+
+.inputrow{
+  display:flex;
+  gap:8px;
+  margin-top:12px;
+}
+
+.inputrow input{
+  flex:1;
+  padding:15px;
+  border-radius:15px;
+  border:1px solid #24506d;
+  background:#071d31;
+  color:white;
+  outline:none;
+}
+
+.send{
+  width:55px;
+  border-radius:15px;
+  background:#168fe0;
+  font-size:20px;
 }
 
 .wallet{
-  margin:30px 20px;
-  padding:30px;
+  margin:18px;
+  padding:25px;
   border-radius:25px;
-  background:linear-gradient(135deg,#10145b,#083d60);
+  background:linear-gradient(135deg,#102f4b,#17215a);
   text-align:center;
 }
+
+.wallet p{
+  color:#b5c8d8;
+  margin-bottom:10px;
+}
+
 .wallet strong{
-  display:block;
-  font-size:48px;
-  margin:15px;
-  color:#20e7ad;
+  font-size:34px;
+  color:#20d6aa;
 }
-.wallet button{background:#13bd87}
 
-.chatbox{
-  min-height:calc(100vh - 130px);
-  display:flex;
-  flex-direction:column;
-}
-.session{
-  display:flex;
-  justify-content:space-around;
-  padding:15px;
-  background:#071a2e;
-  border-bottom:1px solid #173c5c;
-}
-.session b{color:#20e7ad}
-.messages{
-  flex:1;
-  padding:20px;
-  overflow:auto;
-}
-.msg{
-  width:max-content;
-  max-width:80%;
-  padding:12px 15px;
-  border-radius:17px;
-  margin:8px 0;
-  background:#112d48;
-}
-.msg.me{
-  margin-left:auto;
-  background:linear-gradient(90deg,#087ff0,#6938ed);
-}
-.composer{
-  display:flex;
-  gap:8px;
+.demo{
+  margin-top:15px;
   padding:12px;
-  background:#031020;
-}
-.composer input{margin:0}
-.composer button{
-  background:#12b8ff;
-  width:55px;
+  border-radius:12px;
+  background:#352c0a;
+  color:#ffe47b;
+  font-size:13px;
 }
 
-.back{
-  background:#102c46;
-  font-size:20px;
-}
-.walletbtn{
-  background:linear-gradient(90deg,#f6a800,#ff5b00);
-}
-
-nav{
+.nav{
   position:sticky;
   bottom:0;
   display:flex;
   justify-content:space-around;
-  padding:15px;
-  background:#031020;
-  border-top:1px solid #173c5c;
+  padding:16px 8px;
+  background:#061626;
+  border-top:1px solid #18374e;
 }
-nav button{background:none;color:#b9c8d8}
-nav button.active{color:#18baff}
 
-@media(max-width:600px){
-  .hero h1{font-size:31px}
-  .brand{font-size:21px}
+.nav button{
+  background:none;
+  color:#b7c8d6;
+  font-size:15px;
+}
+
+.nav button.active{
+  color:#16bdf3;
+}
+
+.back{
+  width:auto;
+  padding:10px 15px;
+  margin-bottom:12px;
+  border-radius:12px;
+  background:#123452;
+}
+
+.empty{
+  padding:30px;
+  text-align:center;
+  color:#9eb2c4;
 }
 </style>
 </head>
@@ -229,312 +287,412 @@ nav button.active{color:#18baff}
 
 <div class="app">
 
-<!-- LOGIN -->
-<section id="auth" class="screen auth">
-  <div class="card">
-    <div class="logo">💬 <b>Chat<span>4Cash</span></b> 💰</div>
-    <p>Chati • Pata Marafiki • Ulipwe</p>
-
-    <h2>Karibu 👋</h2>
-
-    <input id="name" placeholder="Jina lako">
-    <input id="email" type="email" placeholder="Barua pepe">
-    <input id="pass" type="password" placeholder="Nenosiri">
-
-    <button class="mainbtn" onclick="register()">
-      🚀 Jisajili / Ingia
-    </button>
-
-    <small class="note">
-      Demo ya kwanza. Usitumie nenosiri lako halisi hapa.
-    </small>
-  </div>
-</section>
-
+<header>
+  <div class="logo">💬 Chat<span>4Cash</span> 💰</div>
+  <div class="tag">Chati • Pata Marafiki • Ulipwe</div>
+</header>
 
 <!-- HOME -->
-<section id="home" class="screen hidden">
+<section id="home" class="screen active">
 
-<header>
-  <div class="brand">💬 Chat<span>4Cash</span> 💰</div>
+  <div class="hero">
+    <h1>
+      Chat. <span>Pata Marafiki.</span><br>
+      Ulipwe! 💰
+    </h1>
 
-  <button class="walletbtn" onclick="openWallet()">
-    💰 TSh <span id="bal">0</span>
-  </button>
-</header>
+    <p>
+      Karibu Chat4Cash — jukwaa la kuzungumza,
+      kupata marafiki na kutumia muda wako kwa njia mpya.
+    </p>
+  </div>
 
-<div class="hero">
-  <h1>Chat. <span>Pata Marafiki.</span> Ulipwe! 💰</h1>
-  <p>
-    Karibu Chat4Cash — jukwaa la kuzungumza,
-    kupata marafiki na kutumia muda wako kwa njia mpya.
-  </p>
-</div>
+  <div class="tabs">
+    <button class="tab" onclick="filterPeople('all')">🌍 Wote</button>
+    <button class="tab" onclick="filterPeople('usa')">🇺🇸 USA</button>
+    <button class="tab" onclick="filterPeople('uk')">🇬🇧 UK</button>
+    <button class="tab" onclick="filterPeople('canada')">🇨🇦 Canada</button>
+  </div>
 
-<div class="tabs">
-  <button onclick="filterPeople('all')">🌍 Wote</button>
-  <button onclick="filterPeople('usa')">🇺🇸 USA</button>
-  <button onclick="filterPeople('uk')">🇬🇧 UK</button>
-  <button onclick="filterPeople('canada')">🇨🇦 Canada</button>
-</div>
+  <h2 class="title">💬 Watu wa kuchat</h2>
 
-<h2 class="title">💬 Watu wa kuchat</h2>
-
-<div id="people" class="people"></div>
-
-<nav>
-  <button class="active" onclick="show('home')">🏠 Nyumbani</button>
-  <button onclick="openWallet()">💰 Salio</button>
-  <button onclick="logout()">🚪 Toka</button>
-</nav>
+  <div id="people"></div>
 
 </section>
-
 
 <!-- CHAT -->
-<section id="chat" class="screen hidden chatbox">
+<section id="chat" class="screen">
 
-<header>
-  <button class="back" onclick="show('home')">←</button>
+  <div class="chatbox">
 
-  <div>
-    <b id="chatName">Chat</b><br>
-    <small id="chatRate"></small>
+    <button class="back" onclick="showScreen('home')">
+      ← Rudi
+    </button>
+
+    <div class="chathead">
+      <div id="chatAvatar" class="avatar">👩</div>
+
+      <h2 id="chatName">Mtu wa Chat</h2>
+
+      <p id="chatCountry" class="country">🌍</p>
+
+      <div id="timer" class="timer">60:00</div>
+
+      <small>⏱️ Muda uliobaki</small>
+    </div>
+
+    <div id="messages" class="messages">
+      <div class="msg">
+        👋 Karibu kwenye chat!
+      </div>
+    </div>
+
+    <div class="inputrow">
+      <input
+        id="msg"
+        type="text"
+        placeholder="Andika ujumbe..."
+        onkeydown="if(event.key==='Enter') sendMsg()"
+      >
+
+      <button class="send" onclick="sendMsg()">➤</button>
+    </div>
+
   </div>
-
-  <span>🟢</span>
-</header>
-
-<div class="session">
-  <span>⏱️ Muda: <b id="timer">00:00</b></span>
-  <span>💰 Mapato: <b>TSh <span id="earned">0</span></b></span>
-</div>
-
-<div id="messages" class="messages">
-  <div class="msg">
-    👋 Karibu kwenye chat!
-  </div>
-</div>
-
-<div class="composer">
-  <input id="msg" placeholder="Andika ujumbe...">
-  <button onclick="sendMsg()">➤</button>
-</div>
 
 </section>
-
 
 <!-- WALLET -->
-<section id="wallet" class="screen hidden">
+<section id="wallet" class="screen">
 
-<header>
-  <button class="back" onclick="show('home')">←</button>
-  <h2>💰 Salio langu</h2>
-  <span></span>
-</header>
+  <h2 class="title">💰 Salio</h2>
 
-<div class="wallet">
-  <p>Salio la demo</p>
+  <div class="wallet">
 
-  <strong>TSh <span id="walletBal">0</span></strong>
+    <p>Salio lako la demo</p>
 
-  <button onclick="withdraw()">
-    💸 Toa pesa
-  </button>
-</div>
+    <strong>
+      TSh <span id="walletBal">0</span>
+    </strong>
 
-<h3 class="title">Historia</h3>
+    <button class="primary" onclick="buyChat()">
+      💳 Nunua dakika 60 — TSh 12,000
+    </button>
 
-<div class="title" id="history">
-  Hakuna miamala bado.
-</div>
+    <div class="demo">
+      ⚠️ Hii ni DEMO. Hakuna pesa halisi inayokatwa.
+      Mfumo wa malipo halisi utaunganishwa baadaye.
+    </div>
+
+  </div>
+
+  <h2 class="title">📋 Historia</h2>
+
+  <div id="history" class="empty">
+    Hakuna muamala bado.
+  </div>
 
 </section>
 
-</div>
+<!-- BOTTOM NAV -->
+<nav class="nav">
 
+  <button class="active" onclick="showScreen('home')">
+    🏠<br>Nyumbani
+  </button>
+
+  <button onclick="showScreen('wallet')">
+    💰<br>Salio
+  </button>
+
+  <button onclick="logout()">
+    🚪<br>Toka
+  </button>
+
+</nav>
+
+</div>
 
 <script>
 
 const people = [
- {name:"Emma",country:"🇺🇸 USA",code:"usa",rate:100,avatar:"👩🏽"},
- {name:"James",country:"🇬🇧 UK",code:"uk",rate:100,avatar:"👨🏽"},
- {name:"Sophia",country:"🇨🇦 Canada",code:"canada",rate:100,avatar:"👩🏻"},
- {name:"Olivia",country:"🇺🇸 USA",code:"usa",rate:100,avatar:"👩🏼"}
+
+  {
+    name:"Emma",
+    country:"🇺🇸 USA",
+    code:"usa",
+    rate:100,
+    avatar:"👩"
+  },
+
+  {
+    name:"James",
+    country:"🇬🇧 UK",
+    code:"uk",
+    rate:100,
+    avatar:"👨"
+  },
+
+  {
+    name:"Sophia",
+    country:"🇨🇦 Canada",
+    code:"canada",
+    rate:100,
+    avatar:"👩‍🦰"
+  },
+
+  {
+    name:"Olivia",
+    country:"🇺🇸 USA",
+    code:"usa",
+    rate:100,
+    avatar:"👩‍🦱"
+  }
+
 ];
 
-let balance=0;
-let currentPerson=null;
-let startTime=null;
-let timer=null;
+const CHAT_PRICE = 12000;
+const CHAT_MINUTES = 60;
 
+let balance = 0;
+let currentPerson = null;
+let startTime = null;
+let timer = null;
+let remainingMinutes = 0;
+let remainingSeconds = 0;
+let chatPaid = false;
 
-function register(){
+function showScreen(id){
 
- const name=document.getElementById("name").value.trim();
+  document.querySelectorAll(".screen").forEach(
+    s => s.classList.remove("active")
+  );
 
- if(!name){
-   alert("Tafadhali andika jina lako kwanza ❤️");
-   return;
- }
+  document.getElementById(id).classList.add("active");
 
-
-
- show("home");
- renderPeople();
+  window.scrollTo(0,0);
 }
 
+function renderPeople(list = people){
 
-function renderPeople(list=people){
+  const box = document.getElementById("people");
 
- const box=document.getElementById("people");
+  box.innerHTML = list.map((p,i) => `
 
- box.innerHTML=list.map((p,i)=>`
+    <div class="card">
 
- <div class="person">
+      <div class="avatar">
+        ${p.avatar}
+      </div>
 
-   <div class="avatar">${p.avatar}</div>
+      <h3>${p.name}</h3>
 
-   <h3>${p.name}</h3>
+      <div class="country">
+        ${p.country}
+      </div>
 
-   <div class="country">${p.country}</div>
+      <div class="rate">
+        TSh ${p.rate} / dakika
+      </div>
 
-   <div class="rate">TSh ${p.rate} / dakika</div>
+      <button
+        class="chatbtn"
+        onclick="startChat(${i})"
+      >
+        💬 Anza Chat
+      </button>
 
-   <button class="chatbtn" onclick="startChat(${i})">
-     💬 Anza Chat
-   </button>
+    </div>
 
- </div>
+  `).join("");
 
- `).join("");
 }
-
 
 function filterPeople(country){
 
- if(country==="all"){
-   renderPeople();
- }else{
-   renderPeople(people.filter(p=>p.code===country));
- }
+  if(country === "all"){
+    renderPeople();
+  }else{
+
+    renderPeople(
+      people.filter(p => p.code === country)
+    );
+
+  }
 
 }
-
 
 function startChat(index){
 
- currentPerson=people[index];
+  currentPerson = people[index];
 
- document.getElementById("chatName").textContent=currentPerson.name;
- document.getElementById("chatRate").textContent=
- "TSh "+currentPerson.rate+" / dakika";
+  if(!chatPaid){
 
- document.getElementById("messages").innerHTML=
- '<div class="msg">👋 Karibu kwenye chat na '+currentPerson.name+'!</div>';
+    alert(
+      "Kuanza chat unahitaji kununua dakika 60 kwa TSh 12,000 kwenye sehemu ya Salio."
+    );
 
- startTime=Date.now();
+    showScreen("wallet");
 
- clearInterval(timer);
- timer=setInterval(updateChat,1000);
+    return;
+  }
 
- show("chat");
+  document.getElementById("chatAvatar").textContent =
+    currentPerson.avatar;
+
+  document.getElementById("chatName").textContent =
+    currentPerson.name;
+
+  document.getElementById("chatCountry").textContent =
+    currentPerson.country;
+
+  document.getElementById("messages").innerHTML = `
+    <div class="msg">
+      👋 Karibu kwenye chat na ${currentPerson.name}!
+    </div>
+  `;
+
+  startTime = Date.now();
+
+  clearInterval(timer);
+
+  timer = setInterval(updateChat,1000);
+
+  updateChat();
+
+  showScreen("chat");
+
 }
-
 
 function updateChat(){
 
- if(!startTime || !currentPerson)return;
+  if(!startTime || !currentPerson) return;
 
- const seconds=Math.floor((Date.now()-startTime)/1000);
- const minutes=seconds/60;
+  const totalSeconds = CHAT_MINUTES * 60;
 
- const earned=minutes*currentPerson.rate;
+  const usedSeconds =
+    Math.floor((Date.now() - startTime) / 1000);
 
- document.getElementById("earned").textContent=
- Math.floor(earned);
+  const leftSeconds =
+    Math.max(totalSeconds - usedSeconds,0);
 
- const m=Math.floor(seconds/60);
- const s=String(seconds%60).padStart(2,"0");
+  const m =
+    Math.floor(leftSeconds / 60);
 
- document.getElementById("timer").textContent=
- String(m).padStart(2,"0")+":"+s;
+  const s =
+    String(leftSeconds % 60).padStart(2,"0");
 
- balance=earned;
+  document.getElementById("timer").textContent =
+    String(m).padStart(2,"0") + ":" + s;
 
- document.getElementById("bal").textContent=
- Math.floor(balance);
+  if(leftSeconds <= 0){
+
+    clearInterval(timer);
+
+    timer = null;
+
+    chatPaid = false;
+
+    alert(
+      "Muda wako wa chat wa dakika 60 umeisha."
+    );
+
+    showScreen("wallet");
+
+  }
 
 }
-
 
 function sendMsg(){
 
- const input=document.getElementById("msg");
- const messages=document.getElementById("messages");
+  const input =
+    document.getElementById("msg");
 
- const text=input.value.trim();
+  const messages =
+    document.getElementById("messages");
 
- if(!text)return;
+  const text =
+    input.value.trim();
 
- const message=document.createElement("div");
+  if(!text) return;
 
- message.className="msg me";
- message.textContent=text;
+  if(!chatPaid){
 
- messages.appendChild(message);
+    alert("Muda wako wa chat umeisha.");
 
- input.value="";
+    return;
+  }
 
- messages.scrollTop=messages.scrollHeight;
+  const message =
+    document.createElement("div");
 
-}
+  message.className = "msg me";
 
+  message.textContent = text;
 
-function openWallet(){
+  messages.appendChild(message);
 
- document.getElementById("walletBal").textContent=
- Math.floor(balance);
+  input.value = "";
 
- show("wallet");
-
-}
-
-
-function withdraw(){
-
- alert("Hii bado ni DEMO. Baadaye tutaunganisha malipo halisi kupitia mfumo wa malipo.");
+  messages.scrollTop =
+    messages.scrollHeight;
 
 }
 
+function buyChat(){
+
+  balance += CHAT_PRICE;
+
+  chatPaid = true;
+
+  document.getElementById("walletBal").textContent =
+    balance.toLocaleString();
+
+  document.getElementById("history").innerHTML = `
+
+    <div class="card">
+
+      <h3>✅ Demo payment</h3>
+
+      <p class="country">
+        Dakika ${CHAT_MINUTES}
+      </p>
+
+      <p class="rate">
+        TSh ${CHAT_PRICE.toLocaleString()}
+      </p>
+
+    </div>
+
+  `;
+
+  alert(
+    "Umepewa dakika 60 za demo! Sasa unaweza kuanza chat."
+  );
+
+  showScreen("home");
+
+}
 
 function logout(){
 
- clearInterval(timer);
+  clearInterval(timer);
 
- document.getElementById("name").value="";
- document.getElementById("email").value="";
- document.getElementById("pass").value="";
+  timer = null;
 
- show("auth");
+  currentPerson = null;
 
-}
+  startTime = null;
 
+  chatPaid = false;
 
-function show(id){
-
- document.querySelectorAll(".screen")
- .forEach(x=>x.classList.add("hidden"));
-
- document.getElementById(id)
- .classList.remove("hidden");
+  showScreen("home");
 
 }
-
 
 renderPeople();
 
 </script>
 
 </body>
-                                    </html>
+</html>
